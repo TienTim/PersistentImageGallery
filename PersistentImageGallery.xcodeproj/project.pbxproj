@@ -9,23 +9,31 @@
 /* Begin PBXBuildFile section */
 		A80C2E8B2124FD8700817CA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E8A2124FD8700817CA1 /* AppDelegate.swift */; };
 		A80C2E8D2124FD8700817CA1 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E8C2124FD8700817CA1 /* DocumentBrowserViewController.swift */; };
-		A80C2E8F2124FD8700817CA1 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E8E2124FD8700817CA1 /* DocumentViewController.swift */; };
-		A80C2E912124FD8700817CA1 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E902124FD8700817CA1 /* Document.swift */; };
+		A80C2E912124FD8700817CA1 /* ImageGalleryDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2E902124FD8700817CA1 /* ImageGalleryDocument.swift */; };
 		A80C2E942124FD8700817CA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A80C2E922124FD8700817CA1 /* Main.storyboard */; };
 		A80C2E962124FD8900817CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A80C2E952124FD8900817CA1 /* Assets.xcassets */; };
 		A80C2E992124FD8900817CA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A80C2E972124FD8900817CA1 /* LaunchScreen.storyboard */; };
+		A80C2EA421252B1300817CA1 /* ImageGalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2EA021252B1300817CA1 /* ImageGalleryCollectionViewCell.swift */; };
+		A80C2EA521252B1300817CA1 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2EA121252B1300817CA1 /* Utilities.swift */; };
+		A80C2EA621252B1300817CA1 /* ImageGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2EA221252B1300817CA1 /* ImageGalleryViewController.swift */; };
+		A80C2EA721252B1300817CA1 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2EA321252B1300817CA1 /* ImageViewController.swift */; };
+		A80C2EAA212576E300817CA1 /* ImageGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C2EA9212576E300817CA1 /* ImageGallery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A80C2E872124FD8700817CA1 /* PersistentImageGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersistentImageGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A80C2E8A2124FD8700817CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A80C2E8C2124FD8700817CA1 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
-		A80C2E8E2124FD8700817CA1 /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
-		A80C2E902124FD8700817CA1 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		A80C2E902124FD8700817CA1 /* ImageGalleryDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryDocument.swift; sourceTree = "<group>"; };
 		A80C2E932124FD8700817CA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A80C2E952124FD8900817CA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A80C2E982124FD8900817CA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A80C2E9A2124FD8900817CA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A80C2EA021252B1300817CA1 /* ImageGalleryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageGalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		A80C2EA121252B1300817CA1 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		A80C2EA221252B1300817CA1 /* ImageGalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageGalleryViewController.swift; sourceTree = "<group>"; };
+		A80C2EA321252B1300817CA1 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		A80C2EA9212576E300817CA1 /* ImageGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGallery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +66,28 @@
 		A80C2E892124FD8700817CA1 /* PersistentImageGallery */ = {
 			isa = PBXGroup;
 			children = (
-				A80C2E8A2124FD8700817CA1 /* AppDelegate.swift */,
-				A80C2E8C2124FD8700817CA1 /* DocumentBrowserViewController.swift */,
-				A80C2E8E2124FD8700817CA1 /* DocumentViewController.swift */,
-				A80C2E902124FD8700817CA1 /* Document.swift */,
 				A80C2E922124FD8700817CA1 /* Main.storyboard */,
-				A80C2E952124FD8900817CA1 /* Assets.xcassets */,
-				A80C2E972124FD8900817CA1 /* LaunchScreen.storyboard */,
+				A80C2E8C2124FD8700817CA1 /* DocumentBrowserViewController.swift */,
+				A80C2EA221252B1300817CA1 /* ImageGalleryViewController.swift */,
+				A80C2EA321252B1300817CA1 /* ImageViewController.swift */,
+				A80C2EA821252BFD00817CA1 /* Supporting Files */,
 				A80C2E9A2124FD8900817CA1 /* Info.plist */,
 			);
 			path = PersistentImageGallery;
+			sourceTree = "<group>";
+		};
+		A80C2EA821252BFD00817CA1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A80C2E902124FD8700817CA1 /* ImageGalleryDocument.swift */,
+				A80C2EA9212576E300817CA1 /* ImageGallery.swift */,
+				A80C2EA021252B1300817CA1 /* ImageGalleryCollectionViewCell.swift */,
+				A80C2EA121252B1300817CA1 /* Utilities.swift */,
+				A80C2E8A2124FD8700817CA1 /* AppDelegate.swift */,
+				A80C2E952124FD8900817CA1 /* Assets.xcassets */,
+				A80C2E972124FD8900817CA1 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,9 +161,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A80C2E912124FD8700817CA1 /* Document.swift in Sources */,
-				A80C2E8F2124FD8700817CA1 /* DocumentViewController.swift in Sources */,
+				A80C2EAA212576E300817CA1 /* ImageGallery.swift in Sources */,
+				A80C2E912124FD8700817CA1 /* ImageGalleryDocument.swift in Sources */,
+				A80C2EA421252B1300817CA1 /* ImageGalleryCollectionViewCell.swift in Sources */,
+				A80C2EA621252B1300817CA1 /* ImageGalleryViewController.swift in Sources */,
+				A80C2EA721252B1300817CA1 /* ImageViewController.swift in Sources */,
 				A80C2E8D2124FD8700817CA1 /* DocumentBrowserViewController.swift in Sources */,
+				A80C2EA521252B1300817CA1 /* Utilities.swift in Sources */,
 				A80C2E8B2124FD8700817CA1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +317,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P966V57EBK;
 				INFOPLIST_FILE = PersistentImageGallery/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,6 +336,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P966V57EBK;
 				INFOPLIST_FILE = PersistentImageGallery/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
