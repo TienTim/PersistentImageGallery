@@ -12,7 +12,7 @@ var defaults = UserDefaults.standard
 
 class ImageGalleryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDropDelegate, UICollectionViewDragDelegate, UIDropInteractionDelegate, UICollectionViewDelegateFlowLayout {
     
-    //MARK: Model
+    //MARK: - Model
     
     var imageGallery: ImageGallery? {
         get {
@@ -30,7 +30,7 @@ class ImageGalleryViewController: UIViewController, UICollectionViewDelegate, UI
         }
     }
     
-    //MARK: Document Handling
+    //MARK: - Document Handling
     
     var documents: ImageGalleryDocument?
     
@@ -65,7 +65,7 @@ class ImageGalleryViewController: UIViewController, UICollectionViewDelegate, UI
         }
     }
     
-    //MARK: Storyboard
+    //MARK: - Storyboard
     
     @IBOutlet weak var dropZone: UIView! {
         didSet {
@@ -98,6 +98,8 @@ class ImageGalleryViewController: UIViewController, UICollectionViewDelegate, UI
         super.viewDidLoad()
         let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(adjustCellWidth(byHandlingGestureRecognizedBy:)))
         view.addGestureRecognizer(pinchGesture)
+        let cache = URLCache(memoryCapacity: 1024 * 1024, diskCapacity: 1024 * 1024, diskPath: nil)
+        URLCache.shared = cache
     }
     
     @objc func adjustCellWidth(byHandlingGestureRecognizedBy recognizer: UIPinchGestureRecognizer) {
@@ -110,7 +112,7 @@ class ImageGalleryViewController: UIViewController, UICollectionViewDelegate, UI
         }
     }    
 
-    // MARK: UICollectionViewDataSource
+    // MARK: - UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageInfos.count
@@ -121,6 +123,11 @@ class ImageGalleryViewController: UIViewController, UICollectionViewDelegate, UI
         cell.spinner.startAnimating()
         let imageInfo = imageInfos[indexPath.item]
         DispatchQueue.global(qos: .userInitiated).async {
+            var cacheResponse = CachedURLResponse()
+            let task = URLSession.shared.dataTask(with: imageInfo.url!) { data, response, error in
+                cacheResponse = CachedURLResponse(response: response!, data: data!)
+            }
+            URLCache.shared.storeCachedResponse(cacheResponse, for: task)
             if let data = try? Data(contentsOf: imageInfo.url!) {
                 DispatchQueue.main.async {
                     cell.spinner.stopAnimating()
@@ -187,6 +194,11 @@ class ImageGalleryViewController: UIViewController, UICollectionViewDelegate, UI
                     coordinator.drop(item.dragItem, toItemAt: destinationIndexPath)
                 }
             } else {
+                guard URLCache.shared.currentMemoryUsage < 50 * 1024 else {
+                    print("\(URLCache.shared.currentMemoryUsage): Usage overload")
+                    return
+                }
+                print("\(URLCache.shared.currentMemoryUsage): Cache usage")
                 let placeHolderContext = coordinator.drop(
                     item.dragItem,
                     to: UICollectionViewDropPlaceholder(insertionIndexPath: destinationIndexPath, reuseIdentifier: "DropPlaceHolderCell")
