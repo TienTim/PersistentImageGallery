@@ -194,7 +194,7 @@ class ImageGalleryViewController: UIViewController, UICollectionViewDelegate, UI
                     coordinator.drop(item.dragItem, toItemAt: destinationIndexPath)
                 }
             } else {
-                guard URLCache.shared.currentMemoryUsage < 50 * 1024 else {
+                guard URLCache.shared.currentMemoryUsage < 50 * 1024 else {     // reasonable limit file system usage is 50 kB
                     print("\(URLCache.shared.currentMemoryUsage): Usage overload")
                     return
                 }
